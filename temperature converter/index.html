@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="temp-container">
+        <div class="container">
+            <button id="clear" onclick="window.location.reload();">Clear</button>
+            <div class="bg-color">
+                <img src="temperature.png" alt="">
+                <h1 class="header">Please Enter the Temperature!..To Convert</h1>
+
+            </div>
+            <div class="title">
+                <input type="number" name="number" id="temp" placeholder="type number">
+          
+
+               
+                    <select name="temp-diff" id="output">
+                        <option value="Celsius">Celsius</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                    </select>
+             
+            </div>
+                    
+               
+            
+            <div>
+                <button type="button" id="convert" onclick="temperature()">Convert</button>
+                
+            </div>
+            <p id="ans">Result:</p>
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+
+    <script>
+        let temperature = () => {
+        let opt = document.getElementById("output");
+        let val = document.getElementById("temp").value;
+        let ans = document.getElementById("ans");
+            if(opt.value == "Celsius"){  
+                let F = val * (9/5) + 32;
+                ans.textContent = "Result: " + F.toFixed(4) + " F";
+            }else{
+                let C = (val-32) * (5/9);
+                ans.textContent = "Result: " + C.toFixed(4) + " C";
+            }
+    }
+    </script>
+
+
+</html>
